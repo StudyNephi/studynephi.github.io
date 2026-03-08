@@ -1,59 +1,100 @@
 <!DOCTYPE html>
-<html>
-    <meta name="viewport" content="width=600">
+<html lang="en">
 <head>
-    <title>Forest Dale Youth</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=600">
+<title>Forest Dale Youth</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        text-align: center;
+    }
+
+    h1, h3 {
+        margin-bottom: 20px;
+    }
+
+    .calendar-wrapper {
+        width: 600px;
+        max-width: 100%;
+        height: 300px; /* shows ~4 events on laptop */
+        margin: 0 auto 40px auto;
+        border: 1px solid #777;
+        overflow: hidden;
+        position: relative;
+        border-radius: 8px;
+    }
+
+    .calendar-inner {
+        width: 100%;
+        height: 100%;
+        overflow-y: auto; /* smooth scrolling inside container */
+        -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
+    }
+
+    .calendar-inner iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+
+    /* Hide scrollbar for all browsers */
+    .calendar-inner::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+    }
+    .calendar-inner {
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;     /* Firefox */
+    }
+
+    /* Mobile adjustments */
+    @media (max-width: 700px) {
+        .calendar-wrapper {
+            width: 100%;
+            height: 500px; /* taller for mobile scrolling */
+        }
+    }
+
+    .links {
+        max-width: 600px;
+        margin: 0 auto;
+        text-align: left;
+    }
+
+    .links p {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+</style>
 </head>
 <body>
-    <div>
-        <h1>Forest Dale Youth Upcoming Activities</h1>
-    </div>
-    <div class="calendar-container">
-      <iframe 
-        src="https://calendar.google.com/calendar/embed?mode=AGENDA&height=600&wkst=1&ctz=America%2FDenver&showPrint=0&src=NGY1ODNjMTZiMmQ0MjM1YmVmY2EzMzdiYjNhNTJiZTQxNzU5YzczNjIyMmE5ODg4ZDJlNGQwMmExYWM4MGI0MEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23d81b60"
-        frameborder="0" 
-        width="600" 
-        height="400" 
-        scrolling="no">
-        
-      </iframe>
-    </div>
-    <div>
-        <h3>Usefull Links:</h3>
-        <p>
-          <a href="https://www.churchofjesuschrist.org/study/manual/aaronic-priesthood-quorum-theme/aaronic-priesthood-quorum-theme?lang=eng">Young Men's Theme
-          </a>
-        </p>
 
-        <p><a href="https://www.churchofjesuschrist.org/study/manual/young-women-theme/young-women-theme?lang=eng">Young Women's Theme
-          </a>
-        </p>
+<h1>Forest Dale Youth Upcoming Activities</h1>
+
+<div class="calendar-wrapper">
+    <div class="calendar-inner">
+        <iframe 
+            src="https://calendar.google.com/calendar/embed?mode=AGENDA&height=600&wkst=1&ctz=America%2FDenver&showPrint=0&showTitle=0&showTabs=0&showCalendars=0&src=NGY1ODNjMTZiMmQ0MjM1YmVmY2EzMzdiYjNhNTJiZTQxNzU5YzczNjIyMmE5ODg4ZDJlNGQwMmExYWM4MGI0MEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23d81b60"
+            scrolling="no">
+        </iframe>
     </div>
+</div>
 
-    <style>
-.calendar-container {
-  position: relative;
-  width: 100%;
-  padding-bottom: 75%; 
-  height: 0;
-  overflow: hidden;
-}
+<div class="links">
+    <h3>Useful Links:</h3>
+    <p>
+        <a href="https://www.churchofjesuschrist.org/study/manual/aaronic-priesthood-quorum-theme/aaronic-priesthood-quorum-theme?lang=eng" target="_blank" rel="noopener">
+            Young Men's Theme
+        </a>
+    </p>
+    <p>
+        <a href="https://www.churchofjesuschrist.org/study/manual/young-women-theme/young-women-theme?lang=eng" target="_blank" rel="noopener">
+            Young Women's Theme
+        </a>
+    </p>
+</div>
 
-.calendar-container iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
-}
-@media (max-width: 700px) {
-  .calendar-container iframe{
-    width: 90%;
-    height: 300px;
-  }
-</style>
-    
-</style>
 </body>
 </html>
